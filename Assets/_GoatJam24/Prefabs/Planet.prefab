@@ -552,6 +552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: new-rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 7043694854879628779, guid: edf773e1beed1cf48a32657325b8d064, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7677488969229571921, guid: edf773e1beed1cf48a32657325b8d064, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.01
