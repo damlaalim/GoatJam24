@@ -1,9 +1,11 @@
-﻿using UnityEngine.UI;
+﻿using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 using Zenject;
 using _GoatJam24.Scripts.Player;
 using _GoatJam24.Scripts.Enemy;
 using _GoatJam24.Scripts.MyExtensions;
+using Cinemachine;
 using TMPro;
 
 namespace _GoatJam24.Scripts.Game
@@ -13,6 +15,9 @@ namespace _GoatJam24.Scripts.Game
         [SerializeField] private Transform _miniGameTransform;
         [SerializeField] private TextMeshProUGUI _winText, _loseText;
         [SerializeField] private Button _closeButton;
+        [SerializeField] private CinemachineVirtualCamera _cinemachine;
+        [SerializeField] private GameObject _planet, _rocket;
+        [SerializeField] private Canvas _startCanvas;
         
         [Inject] private PlayerController _playerController;
         [Inject] private PlayerMovement _playerMovement;
@@ -48,6 +53,20 @@ namespace _GoatJam24.Scripts.Game
         public void OnClick_CloseMiniGame()
         {
             _miniGameTransform.gameObject.SetActive(false);
+        }
+        
+        public void OnClick_StartGame()
+        {
+            _startCanvas.enabled = false;
+            StartCoroutine(StartRoutine());
+            
+            IEnumerator StartRoutine()
+            {
+                _cinemachine.LookAt = _rocket.transform;
+                _planet.GetComponent<Animator>().SetTrigger("rocket");
+                yield return new WaitForSeconds(5.3f);
+                _cinemachine.LookAt = _planet.transform;
+            }
         }
     }
 }
