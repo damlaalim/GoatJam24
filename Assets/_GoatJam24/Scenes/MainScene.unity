@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &23139425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2313168322223656128, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+  m_PrefabInstance: {fileID: 1829264935441324014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &372341752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4455465660836012988, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
@@ -481,6 +486,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5cdb91ecfe01fb42b027647343093a4, type: 3}
+--- !u!4 &1194078029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6312654843076081328, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+  m_PrefabInstance: {fileID: 1829264935441324014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309163407
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +592,11 @@ Transform:
   - {fileID: 747469618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1456610555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5870384534833938662, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+  m_PrefabInstance: {fileID: 1829264935441324014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &1495814939 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 3528015685167844351, guid: 3faee8b0f98794149823c3ba021da3ff, type: 3}
@@ -631,6 +646,16 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &1818799965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6050844489344649330, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+  m_PrefabInstance: {fileID: 1829264935441324014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1847033758 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1716128914133803866, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+  m_PrefabInstance: {fileID: 1829264935441324014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &380444603072127685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1005,6 +1030,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2306231658289164734, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2306231658289164734, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.853
+      objectReference: {fileID: 0}
     - target: {fileID: 5921745775880018728, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -1079,6 +1112,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1863746884931331534, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _transformList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1863746884931331534, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _transformList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1194078029}
+    - target: {fileID: 1863746884931331534, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _transformList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1847033758}
+    - target: {fileID: 1863746884931331534, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _transformList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1456610555}
+    - target: {fileID: 1863746884931331534, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _transformList.Array.data[3]
+      value: 
+      objectReference: {fileID: 23139425}
+    - target: {fileID: 1863746884931331534, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _transformList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1818799965}
     - target: {fileID: 1939397531436087485, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
       propertyPath: _planet
       value: 

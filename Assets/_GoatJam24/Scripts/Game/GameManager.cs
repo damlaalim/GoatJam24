@@ -6,6 +6,7 @@ using Zenject;
 using _GoatJam24.Scripts.Player;
 using _GoatJam24.Scripts.Enemy;
 using _GoatJam24.Scripts.MyExtensions;
+using _GoatJam24.Scripts.NPCManagement;
 using Cinemachine;
 using TMPro;
 
@@ -27,6 +28,7 @@ namespace _GoatJam24.Scripts.Game
         [Inject] private EnemyManager _enemyManager;
         [Inject] private PlayerShootController _playerShootController;
         [Inject] private PlayerWorldController _playerWorldController;
+        [Inject] private NPCManager _npcManager;
 
         private void Start()
         {
@@ -70,6 +72,8 @@ namespace _GoatJam24.Scripts.Game
         {
             _startCanvas.enabled = false;
             _playerWorldController.canTeleport = true;
+            _npcManager.StartGame();
+            
             StartCoroutine(StartRoutine());
             
             IEnumerator StartRoutine()
