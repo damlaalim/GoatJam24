@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6772654583228687411}
   - component: {fileID: 9482273872270180}
   - component: {fileID: 6552945603262656479}
+  - component: {fileID: 2126036385475105832}
   m_Layer: 0
   m_Name: NPC_1
   m_TagString: Untagged
@@ -105,3 +106,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2126036385475105832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706056718458338660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f571f6f5a384991b1145941fffb69a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}

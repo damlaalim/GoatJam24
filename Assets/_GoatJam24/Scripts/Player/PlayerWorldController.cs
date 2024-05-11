@@ -31,6 +31,9 @@ namespace _GoatJam24.Scripts.Player
         
         public void Teleport(Vector3 target)
         {
+            if (!canTeleport)
+                return;
+            
             transform.DOMove(Vector3.down, .3f).OnComplete(() =>
             {
                 transform.DOMove(target, .3f);

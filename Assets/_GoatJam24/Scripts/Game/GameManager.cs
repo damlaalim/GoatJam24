@@ -72,7 +72,7 @@ namespace _GoatJam24.Scripts.Game
         {
             _startCanvas.enabled = false;
             _playerWorldController.canTeleport = true;
-            _npcManager.StartGame();
+            // _npcManager.StartGame();
             
             StartCoroutine(StartRoutine());
             
