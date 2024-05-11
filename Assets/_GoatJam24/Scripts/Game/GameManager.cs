@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using Zenject;
@@ -25,6 +26,12 @@ namespace _GoatJam24.Scripts.Game
         [Inject] private PlayerMovement _playerMovement;
         [Inject] private EnemyManager _enemyManager;
         [Inject] private PlayerShootController _playerShootController;
+        [Inject] private PlayerWorldController _playerWorldController;
+
+        private void Start()
+        {
+            _playerWorldController.canTeleport = false;
+        }
 
         public void StartMiniGame()
         {
@@ -62,6 +69,7 @@ namespace _GoatJam24.Scripts.Game
         public void OnClick_StartGame()
         {
             _startCanvas.enabled = false;
+            _playerWorldController.canTeleport = true;
             StartCoroutine(StartRoutine());
             
             IEnumerator StartRoutine()
@@ -70,6 +78,10 @@ namespace _GoatJam24.Scripts.Game
                 _planet.GetComponent<Animator>().SetTrigger("rocket");
                 yield return new WaitForSeconds(5.3f);
                 _cinemachine.LookAt = _planet.transform;
+
+                yield return new WaitForSeconds(.3f);
+                
+                _playerWorldController.StartGame();
             }
         }
     }
