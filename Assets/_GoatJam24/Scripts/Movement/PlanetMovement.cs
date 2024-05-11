@@ -1,5 +1,7 @@
 using System;
+using _GoatJam24.Scripts.Game;
 using UnityEngine;
+using Zenject;
 
 namespace _GoatJam24.Scripts.Movement
 {
@@ -7,6 +9,8 @@ namespace _GoatJam24.Scripts.Movement
     {
         [SerializeField] private float _speed;
 
+        [Inject] private GameManager _gameManager;
+        
         private Camera _cam;
         
         private void Start()
@@ -16,6 +20,9 @@ namespace _GoatJam24.Scripts.Movement
 
         private void OnMouseDrag()
         {
+            if (!_gameManager.PlanetCanMovement)
+                return;
+            
             var rotX = Input.GetAxis("Mouse X") * _speed;
             var rotY = Input.GetAxis("Mouse Y") * _speed;
 
