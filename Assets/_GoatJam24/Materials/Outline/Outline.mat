@@ -7,16 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestPlanet
-  m_Shader: {fileID: 4800000, guid: b248fc98155736e42807f09451a2b127, type: 3}
+  m_Name: Outline
+  m_Shader: {fileID: 4800000, guid: c4b1b39145df37749960f19bb82417ca, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 0
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -38,29 +38,17 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
-    - _EnvironmentReflections: 1
-    - _Power: 0.134
-    - _QueueControl: 1
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Scale: 4.4
-    - _SpecularHighlights: 1
+    - _Scale: 0.0122
     - _TessEdgeLength: 16
     - _TessMax: 25
     - _TessMaxDisp: 25
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 16
-    - _TransAmbient: 0.1
-    - _TransDirect: 0.9
-    - _TransNormal: 0.5
-    - _TransScattering: 2
-    - _TransShadow: 0.5
-    - _TransStrength: 1
-    - _TransmissionShadow: 0.5
     m_Colors:
-    - _Color0: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 0}
-    - _Color1: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _bsp: {r: -2.01, g: -0.05, b: -15.73, a: 0}
   m_BuildTextureStacks: []
