@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1151,6 +1151,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7931321704067515163, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: maxEnemyCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931321704067515163, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: enemyCreatDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931321704067515163, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: levelEnemyCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931321704067515163, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _enemyPrefabList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931321704067515163, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _enemyPrefabList.Array.data[1]
+      value: 
+      objectReference: {fileID: 7907121224373583700, guid: 59c376023ebb54742b544a984b0573e9, type: 3}
+    - target: {fileID: 7931321704067515163, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: _enemyPrefabList.Array.data[2]
+      value: 
+      objectReference: {fileID: 7907121224373583700, guid: 244f4739bf007bb4c8755c051b3b987a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
