@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 
 namespace _GoatJam24.Scripts.Player
 {
@@ -7,14 +8,24 @@ namespace _GoatJam24.Scripts.Player
     {
         [SerializeField] private float _speed;
 
-        private void Update()
+        private void Start()
         {
-            var moveHz = Input.GetAxis("Horizontal");
-            var moveVt = Input.GetAxis("Vertical");
+            StartCoroutine(MiniGameMovement_Routine());
+        }
 
-            var movement = new Vector3(moveHz, moveVt, 0) * _speed ;
+        private IEnumerator MiniGameMovement_Routine()
+        {
+            while (true)
+            {
+                var moveHz = Input.GetAxis("Horizontal");
+                var moveVt = Input.GetAxis("Vertical");
 
-            transform.position += movement;
+                var movement = new Vector3(moveHz, moveVt, 0) * _speed * Time.deltaTime;
+
+                transform.position += movement;
+                
+                yield return 0;
+            }
         }
     }
 }
