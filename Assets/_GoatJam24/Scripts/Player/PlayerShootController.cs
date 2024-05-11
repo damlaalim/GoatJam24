@@ -17,6 +17,7 @@ namespace _GoatJam24.Scripts.Player
         [Inject] private BulletManager _bulletManager;
 
         private Coroutine _shootRoutine;
+        private Transform _targetEnemy;
         
         public void StartGame()
         {
@@ -29,19 +30,31 @@ namespace _GoatJam24.Scripts.Player
                 StopCoroutine(_shootRoutine);
         }
 
+        private void Update()
+        {
+            if (!_enemyManager)
+                return;
+            
+            _targetEnemy = _enemyManager.GetNearestEnemy(transform);
+            
+            if (!_targetEnemy)
+                return;
+            
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, _targetEnemy.position - transform.position);
+        }
+
         private IEnumerator Shoot_Routine()
         {
             while (true)
             {
-                var enemy = _enemyManager.GetNearestEnemy(transform);
-                if (!enemy)
+                if (!_targetEnemy)
                 {
                     yield return 0;
                     continue;
                 }
 
-                if (Physics2D.Raycast(transform.position, enemy.position - transform.position, Vector2.Distance(transform.position, enemy.position)))
-                    Debug.DrawRay(transform.position, enemy.position - transform.position, Color.cyan);
+                if (Physics2D.Raycast(transform.position, _targetEnemy.position - transform.position, Vector2.Distance(transform.position, _targetEnemy.position)))
+                    Debug.DrawRay(transform.position, _targetEnemy.position - transform.position, Color.cyan);
 
                 var bullet = _bulletManager.GetBullet();
                 if (bullet is null)
@@ -50,7 +63,7 @@ namespace _GoatJam24.Scripts.Player
                     continue;
                 }
                 bullet.transform.position = transform.position;
-                bullet.Move(enemy.transform);
+                bullet.Move(_targetEnemy.transform);
                 
                 yield return new WaitForSeconds(_shootDelay);
             }

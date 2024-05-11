@@ -82,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5225030757296866659, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5225030757296866659, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6771427847152528023, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_LocalPosition.x
