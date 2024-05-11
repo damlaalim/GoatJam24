@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -9,8 +10,10 @@ namespace _GoatJam24.Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         public bool canTakeDamage;
+        
         [SerializeField] private float _health;
         [SerializeField] private Slider _healthBar;
+        [SerializeField] private Transform _modelTransform;
         
         private float _currentHealth;
         private SpriteRenderer _spriteRenderer;
@@ -23,8 +26,14 @@ namespace _GoatJam24.Scripts.Player
         {
             canTakeDamage = true;
             _currentHealth = _health;
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _spriteRenderer = _modelTransform.GetComponent<SpriteRenderer>();
             _rb = GetComponent<Rigidbody2D>();
+        }
+
+        public void StartGame()
+        {
+            _modelTransform.gameObject.SetActive(true);
+            _healthBar.gameObject.SetActive(true);
         }
 
         public void TakeDamage(float damage, Vector3 enemyPosition)
@@ -37,10 +46,6 @@ namespace _GoatJam24.Scripts.Player
             var targetColor = currentColor;
             targetColor.a = 0;
 
-            // var targetPos = enemyPosition * -1;
-            // targetPos.z = transform.position.z;
-            // transform.DOMoveX(targetPos.x / 5, .3f);
-
             _rb.velocity = new Vector2(-_rb.velocity.x, -_rb.velocity.y);
             
             _spriteRenderer.DOColor(targetColor, .3f).SetLoops(3).OnComplete(() =>
@@ -51,7 +56,18 @@ namespace _GoatJam24.Scripts.Player
             });
 
             if (_currentHealth <= 0)
-                _gameManager.MiniGameOver();
+                _gameManager.MiniGameOver(false);
+
+        }
+
+        public void Destroy()
+        {
+            _modelTransform.DOScale(Vector3.zero, .5f).OnComplete(() =>
+            {
+                _modelTransform.gameObject.SetActive(false);
+                _modelTransform.localScale = Vector3.one;
+            });
+            _healthBar.gameObject.SetActive(false);
         }
 
         public void ResetHealth()

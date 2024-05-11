@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Zenject;
 using _GoatJam24.Scripts.Player;
-using UnityEngine.Serialization;
+using _GoatJam24.Scripts.Game;
 using Random = UnityEngine.Random;
 
 namespace _GoatJam24.Scripts.Enemy
@@ -12,16 +12,20 @@ namespace _GoatJam24.Scripts.Enemy
     public class EnemyManager : MonoBehaviour
     {
         public List<EnemyController> createdEnemyList;
+        public List<EnemyController> _orderEnemyList;
 
         [SerializeField] private List<EnemyController> _enemyPrefabList;
         [SerializeField] private Vector2 xBorder, yBorder;
         [SerializeField] private float zAxis;
         [SerializeField] private int maxEnemyCount;
         [SerializeField] private Transform enemyParent;
+        [SerializeField] private int levelEnemyCount;
         
         [Inject] private PlayerMovement _playerMovement;
+        [Inject] private GameManager _gameManager;
 
         private Coroutine _enemyControlRoutine;
+        private int _createdEnemyCount;
 
         public Transform GetNearestEnemy(Transform player)
         {
@@ -43,18 +47,21 @@ namespace _GoatJam24.Scripts.Enemy
 
         public void StartEnemyCreate()
         {
+            _createdEnemyCount = 0;
             _enemyControlRoutine = StartCoroutine(EnemyCreateControl_Routine());
         }
 
         private IEnumerator EnemyCreateControl_Routine()
         {
-            while (true)
+            while (_createdEnemyCount < levelEnemyCount)
             {
                 if (createdEnemyList.Count < maxEnemyCount)
                     SpawnNewEnemy();
              
                 yield return new WaitForSeconds(3);
             }
+            
+            _gameManager.MiniGameOver(true);
         }
 
         public void SpawnNewEnemy()
@@ -64,9 +71,9 @@ namespace _GoatJam24.Scripts.Enemy
 
             var enemyController = Instantiate(enemy, enemyParent).GetComponent<EnemyController>();
             enemyController.transform.localPosition = randomPos;
-            enemyController.Instantiate(this);
-            createdEnemyList.Add(enemyController);
-            enemyController.FollowToPlayer(_playerMovement.transform);
+            enemyController.Instantiate(this, _playerMovement.transform);
+            _orderEnemyList.Add(enemyController);
+            _createdEnemyCount++;
         }
 
         public void Reset()
@@ -80,7 +87,14 @@ namespace _GoatJam24.Scripts.Enemy
                 Destroy(enemy.gameObject);
             }
 
+            foreach (var enemy in _orderEnemyList)
+            {
+                Destroy(enemy.gameObject);
+            }
+
             createdEnemyList.Clear();
+            _orderEnemyList.Clear();
+            _createdEnemyCount = 0;
         }
     }
 }

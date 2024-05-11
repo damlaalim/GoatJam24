@@ -41,10 +41,6 @@ namespace _GoatJam24.Scripts.Player
 
                 _rb.velocity = new Vector2(moveHz * _speed, moveVt * _speed);
 
-                // movement = new Vector3(moveHz, moveVt, 0) * _speed * Time.deltaTime;
-                // var newPos = transform.position + movement;
-                // transform.position = newPos;
-                
                 yield return 0;
             }
         }

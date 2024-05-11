@@ -16,9 +16,17 @@ namespace _GoatJam24.Scripts.Player
         [Inject] private EnemyManager _enemyManager;
         [Inject] private BulletManager _bulletManager;
 
-        private void Start()
+        private Coroutine _shootRoutine;
+        
+        public void StartGame()
         {
-            StartCoroutine(Shoot_Routine());
+            _shootRoutine = StartCoroutine(Shoot_Routine());
+        }
+
+        public void OverGame()
+        {
+            if (_shootRoutine is not null)
+                StopCoroutine(_shootRoutine);
         }
 
         private IEnumerator Shoot_Routine()
