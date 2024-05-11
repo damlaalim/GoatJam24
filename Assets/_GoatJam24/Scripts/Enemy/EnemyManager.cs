@@ -16,7 +16,7 @@ namespace _GoatJam24.Scripts.Enemy
 
         [SerializeField] private List<EnemyController> _enemyPrefabList;
         [SerializeField] private Vector2 xBorder, yBorder;
-        [SerializeField] private float zAxis;
+        [SerializeField] private float zAxis, enemyCreatDelay;
         [SerializeField] private int maxEnemyCount;
         [SerializeField] private Transform enemyParent;
         [SerializeField] private int levelEnemyCount;
@@ -58,7 +58,7 @@ namespace _GoatJam24.Scripts.Enemy
                 if (createdEnemyList.Count < maxEnemyCount)
                     SpawnNewEnemy();
              
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(enemyCreatDelay);
             }
             
             _gameManager.MiniGameOver(true);
