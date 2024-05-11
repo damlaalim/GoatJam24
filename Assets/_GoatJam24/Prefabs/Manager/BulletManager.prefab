@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7561277923848292506
+--- !u!1 &7122926276961062208
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,65 +8,59 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3176523197749362548}
-  - component: {fileID: 2750944229639332532}
-  - component: {fileID: 2502730653985861561}
+  - component: {fileID: 7881078657670135255}
+  - component: {fileID: 8989690213234888703}
+  - component: {fileID: 5910924606553479034}
   m_Layer: 0
-  m_Name: EnemyManager
+  m_Name: BulletManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3176523197749362548
+--- !u!4 &7881078657670135255
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561277923848292506}
+  m_GameObject: {fileID: 7122926276961062208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1006.9035, y: 275.63504, z: -6.4627113}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2750944229639332532
+--- !u!114 &8989690213234888703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561277923848292506}
+  m_GameObject: {fileID: 7122926276961062208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863ad14fafab4ee68ab4dd258254bd9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f00549ce5ac4187a919c06f29fb2eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createdEnemyList: []
-  _enemyPrefabList:
-  - {fileID: 7070870398237966784, guid: fed8ca33e6e1da94d94a358d95a004a4, type: 3}
-  xBorder: {x: -3, y: 3}
-  yBorder: {x: -3, y: 3}
-  zAxis: -1.158968
-  maxEnemyCount: 3
-  enemyParent: {fileID: 0}
---- !u!114 &2502730653985861561
+  _bulletCount: 10
+  _bulletPrefab: {fileID: 8705449471104094397, guid: 07f50cc590dab8740bc1243b1a1bbe02, type: 3}
+--- !u!114 &5910924606553479034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561277923848292506}
+  m_GameObject: {fileID: 7122926276961062208}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _components:
-  - {fileID: 2750944229639332532}
+  - {fileID: 8989690213234888703}
   _identifier: 
   _useSceneContext: 0
   _context: {fileID: 0}

@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
-using DG.Tweening;
+using Zenject;
 using _GoatJam24.Scripts.MyExtensions;
 
 namespace _GoatJam24.Scripts.Bullet
 {
     public class BulletController : MonoBehaviour
     {
+        public float damage;
+        
         [SerializeField] private float speed, targetDis;
+
+        private BulletManager _bulletManager;
+
+        public void Initialize(BulletManager bulletManager)
+        {
+            _bulletManager = bulletManager;
+        }
+        
         public void Destroy()
         {
+            _bulletManager.SetBullet(this);
             gameObject.SetActive(false);
         }
         

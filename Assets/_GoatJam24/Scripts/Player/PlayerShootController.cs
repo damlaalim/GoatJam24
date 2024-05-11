@@ -14,6 +14,7 @@ namespace _GoatJam24.Scripts.Player
         [SerializeField] private float _shootDelay;
         
         [Inject] private EnemyManager _enemyManager;
+        [Inject] private BulletManager _bulletManager;
 
         private void Start()
         {
@@ -34,10 +35,14 @@ namespace _GoatJam24.Scripts.Player
                 if (Physics2D.Raycast(transform.position, enemy.position - transform.position, Vector2.Distance(transform.position, enemy.position)))
                     Debug.DrawRay(transform.position, enemy.position - transform.position, Color.cyan);
 
-                var bullet = Instantiate(_bullet);
+                var bullet = _bulletManager.GetBullet();
+                if (bullet is null)
+                {
+                    yield return 0;
+                    continue;
+                }
                 bullet.transform.position = transform.position;
-                bullet.TryGetComponent<BulletController>(out var bulletController);
-                bulletController.Move(enemy.transform);
+                bullet.Move(enemy.transform);
                 
                 yield return new WaitForSeconds(_shootDelay);
             }
