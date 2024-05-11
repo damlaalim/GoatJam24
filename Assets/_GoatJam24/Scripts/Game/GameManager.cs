@@ -26,6 +26,7 @@ namespace _GoatJam24.Scripts.Game
 
         public void StartMiniGame()
         {
+            _startCanvas.enabled = false;
             _miniGameTransform.gameObject.SetActive(true);
             _playerController.transform.position = Vector3.zero.With(z: _playerController.transform.position.z);
             _playerMovement.StartGame();
@@ -52,6 +53,7 @@ namespace _GoatJam24.Scripts.Game
         
         public void OnClick_CloseMiniGame()
         {
+            _startCanvas.enabled = true;
             _miniGameTransform.gameObject.SetActive(false);
         }
         
