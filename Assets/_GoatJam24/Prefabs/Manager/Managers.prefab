@@ -82,19 +82,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5225030757296866659, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5225030757296866659, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6771427847152528023, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1169112
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 6771427847152528023, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7759876
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 6771427847152528023, guid: 3846a2d7c0854de4a95208a19a0daf32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: enemyParent
       value: 
       objectReference: {fileID: 6284463671198805467}
+    - target: {fileID: 2750944229639332532, guid: 5433c1959c19d784abf0e754fa1d8c0d, type: 3}
+      propertyPath: enemyCreatDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2750944229639332532, guid: 5433c1959c19d784abf0e754fa1d8c0d, type: 3}
       propertyPath: levelEnemyCount
       value: 5

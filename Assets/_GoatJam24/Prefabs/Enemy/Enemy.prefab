@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 70f78e062098c4496b852abefff63acf, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.37, y: 6.21}
+  m_Size: {x: 2.44, y: 2.44}
   m_EdgeRadius: 0
 --- !u!114 &7070870398237966784
 MonoBehaviour:

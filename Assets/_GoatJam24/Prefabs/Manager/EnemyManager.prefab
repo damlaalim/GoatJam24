@@ -46,13 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createdEnemyList: []
+  _orderEnemyList: []
   _enemyPrefabList:
   - {fileID: 7070870398237966784, guid: fed8ca33e6e1da94d94a358d95a004a4, type: 3}
   xBorder: {x: -3, y: 3}
   yBorder: {x: -3, y: 3}
   zAxis: -1.158968
-  maxEnemyCount: 3
+  maxEnemyCount: 5
   enemyParent: {fileID: 0}
+  levelEnemyCount: 20
 --- !u!114 &2502730653985861561
 MonoBehaviour:
   m_ObjectHideFlags: 0
