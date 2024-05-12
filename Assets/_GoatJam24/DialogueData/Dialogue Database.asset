@@ -1280,8 +1280,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "D\xFCnyan\u0131n arkas\u0131ndaki biliyor kardi\u015F\u015F\u015F\u015F.\nOna
-          sorabilirsin."
+        value: Nasa biliyor !!!
         type: 0
         typeString: 
       - title: Sequence
