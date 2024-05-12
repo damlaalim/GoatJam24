@@ -12,6 +12,7 @@ namespace _GoatJam24.Scripts.TaskSystem
         [SerializeField] private List<GameObject> tasks;
         [SerializeField] private GameObject taskThick;
         [SerializeField] private Animator anim;
+        public GameObject endCanvas;
 
         private int _taskNumber;
 
@@ -56,8 +57,15 @@ namespace _GoatJam24.Scripts.TaskSystem
                     tasks[_taskNumber].transform.DOScale(Vector3.one, .3f);
                     taskThick.transform.DOScale(Vector3.one, .3f).SetEase(Ease.OutBounce);
                     anim.SetTrigger("end");
+                    StartCoroutine(end());
                 }
             }
+        }
+
+        IEnumerator end()
+        {
+            yield return new WaitForSeconds(4);
+            endCanvas.SetActive(true);
         }
     }
 }
