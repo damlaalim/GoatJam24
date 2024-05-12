@@ -5,7 +5,8 @@ namespace _GoatJam24.Scripts.NPCManagement
 {
     public class NPCManager : MonoBehaviour
     {
-        [SerializeField] private List<Transform> _npcList;
+        // ** Npc create with random transforms ** 
+        // [SerializeField] private List<Transform> _npcList;
         // [SerializeField] private List<Transform> _transformList;
         //
         // private List<Transform> _createdTransformList = new();
