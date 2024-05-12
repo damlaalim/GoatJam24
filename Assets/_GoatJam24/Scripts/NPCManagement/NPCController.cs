@@ -16,8 +16,13 @@ namespace _GoatJam24.Scripts.NPCManagement
         
         public void InteractPlayer()
         {
+            if (_taskManager.TaskNumber == 0)
+                _taskManager.NextTask(1);
             if (gameObject.CompareTag("kaya"))
+            {
+                _taskManager.NextTask(2);
                 _gameManager.nasa.SetActive(true);
+            }
             if (gameObject.CompareTag("Nasa"))
                 _taskManager.NextTask(3);
             // _dialogueManager.StartNewDialogue(_dialogueData);    

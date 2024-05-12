@@ -124,9 +124,9 @@ namespace _GoatJam24.Scripts.Game
             _planetCanMovement = true;
         }
 
-        public void Event_NasaTaskComplete()
-        {
-            _taskManager.NextTask(2);
-        }
+        // public void Event_NasaTaskComplete()
+        // {
+        //     _taskManager.NextTask(2);
+        // }
     }
 }

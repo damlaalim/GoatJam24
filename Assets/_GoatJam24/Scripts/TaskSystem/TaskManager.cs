@@ -8,8 +8,10 @@ namespace _GoatJam24.Scripts.TaskSystem
 {
     public class TaskManager : MonoBehaviour
     {
+        public int TaskNumber => _taskNumber;
         [SerializeField] private List<GameObject> tasks;
         [SerializeField] private GameObject taskThick;
+        [SerializeField] private Animator anim;
 
         private int _taskNumber;
 
@@ -47,6 +49,14 @@ namespace _GoatJam24.Scripts.TaskSystem
                 _taskNumber++;
                 if (_taskNumber < 3)
                     tasks[_taskNumber].transform.DOScale(Vector3.one, .3f);
+
+                
+                if (_taskNumber == 3)
+                {
+                    tasks[_taskNumber].transform.DOScale(Vector3.one, .3f);
+                    taskThick.transform.DOScale(Vector3.one, .3f).SetEase(Ease.OutBounce);
+                    anim.SetTrigger("end");
+                }
             }
         }
     }
