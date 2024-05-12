@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1046,6 +1046,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8139c058504bbdba57c8a56ce17977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &784958688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784958690}
+  - component: {fileID: 784958689}
+  m_Layer: 0
+  m_Name: Dialogue System Scene Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &784958689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784958688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca55201633b97d3408f439eb84ecb249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueEntrySceneEvents:
+  - guid: 99e611d9-a5b5-4ece-ad34-768def8c592b
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 775840913}
+          m_TargetAssemblyTypeName: _GoatJam24.Scripts.Game.GameManager, Assembly-CSharp
+          m_MethodName: Event_StartMiniGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 4c3c5e10-880e-43bd-b1d1-b5b3e88a17ea
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 775840913}
+          m_TargetAssemblyTypeName: _GoatJam24.Scripts.Game.GameManager, Assembly-CSharp
+          m_MethodName: Event_StartMiniGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: acc1a249-1f21-433c-91ba-752c74ef05ea
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 775840913}
+          m_TargetAssemblyTypeName: _GoatJam24.Scripts.Game.GameManager, Assembly-CSharp
+          m_MethodName: Event_StartMiniGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &784958690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784958688}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &856528820 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8601425665071737006, guid: 3faee8b0f98794149823c3ba021da3ff, type: 3}
@@ -4967,9 +5060,77 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4563889117705485670, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: useKey
+      value: 323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4563889117705485670, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: defaultUseMessage
+      value: "(sol klik ile etkile\u015Fime ge\xE7)"
+      objectReference: {fileID: 0}
     - target: {fileID: 5921745775880018728, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
       propertyPath: m_Name
       value: Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 775840913}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 775840913}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Event_EndDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Event_StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: _GoatJam24.Scripts.Game.GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: _GoatJam24.Scripts.Game.GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933015538238878455, guid: 71136b3fd9a2f06439b5fcecd369543e, type: 3}
+      propertyPath: conversationEvents.onConversationStart.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5045,6 +5206,10 @@ PrefabInstance:
       propertyPath: displaySettings.dialogueUI
       value: 
       objectReference: {fileID: 745425069}
+    - target: {fileID: 888883911102094647, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
+      propertyPath: displaySettings.subtitleSettings.minSubtitleSeconds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1939397531436087485, guid: f80c1265ce36cf34ab164d3913ab5981, type: 3}
       propertyPath: _planet
       value: 
@@ -5159,11 +5324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4239754833675207213, guid: b806c43669aea6b45a4fe7e1d35adcf1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0014766084
+      value: 0.0014766096
       objectReference: {fileID: 0}
     - target: {fileID: 4239754833675207213, guid: b806c43669aea6b45a4fe7e1d35adcf1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000018350773
+      value: -0.000018350785
       objectReference: {fileID: 0}
     - target: {fileID: 4239754833675207213, guid: b806c43669aea6b45a4fe7e1d35adcf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5219,11 +5384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1355987342571252486, guid: be73cff260fa5404897a281151e033d0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0014766084
+      value: 0.0014766096
       objectReference: {fileID: 0}
     - target: {fileID: 1355987342571252486, guid: be73cff260fa5404897a281151e033d0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000018350773
+      value: -0.000018350785
       objectReference: {fileID: 0}
     - target: {fileID: 1355987342571252486, guid: be73cff260fa5404897a281151e033d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5264,3 +5429,4 @@ SceneRoots:
   - {fileID: 413940775977179862}
   - {fileID: 1024819229}
   - {fileID: 1124137441}
+  - {fileID: 784958690}

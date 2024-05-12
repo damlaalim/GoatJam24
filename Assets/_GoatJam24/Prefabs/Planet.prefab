@@ -1050,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6706056718458338660, guid: 21dc29b833e3e2b4b90c4f50be317023, type: 3}
       propertyPath: m_Name
-      value: NPC_1
+      value: "Ta\u015F Heykel"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1380,8 +1380,12 @@ PrefabInstance:
       objectReference: {fileID: 7492132900604909805}
     - target: {fileID: 1417878281322075701, guid: d45a6905d313ebb479f317fbc8a8d013, type: 3}
       propertyPath: m_Name
-      value: NPC_2
+      value: "Da\u011F Adam\u0131"
       objectReference: {fileID: 0}
+    - target: {fileID: 5378429209804398201, guid: d45a6905d313ebb479f317fbc8a8d013, type: 3}
+      propertyPath: conversationActor
+      value: 
+      objectReference: {fileID: 6668494613948378599}
     - target: {fileID: 8828079915473935568, guid: d45a6905d313ebb479f317fbc8a8d013, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.019

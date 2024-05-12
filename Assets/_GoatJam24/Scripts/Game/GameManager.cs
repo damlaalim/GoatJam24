@@ -8,6 +8,7 @@ using _GoatJam24.Scripts.Enemy;
 using _GoatJam24.Scripts.MyExtensions;
 using _GoatJam24.Scripts.NPCManagement;
 using Cinemachine;
+using PixelCrushers.DialogueSystem;
 using TMPro;
 
 namespace _GoatJam24.Scripts.Game
@@ -94,6 +95,29 @@ namespace _GoatJam24.Scripts.Game
                 yield return new WaitForSeconds(1f);
                 _planetCanMovement = true;
             }
+        }
+
+        public void Event_StartMiniGame()
+        {
+            StartCoroutine(MiniGameRoutine());
+            
+            IEnumerator MiniGameRoutine()
+            {
+                yield return new WaitForSeconds(2f);
+                StartMiniGame();
+            }
+        }
+
+        public void Event_StartDialogue()
+        {
+            _playerWorldController.canTeleport = false;
+            _planetCanMovement = false;
+        }
+        
+        public void Event_EndDialogue()
+        {
+            _playerWorldController.canTeleport = true;
+            _planetCanMovement = true;
         }
     }
 }
