@@ -20,7 +20,7 @@ namespace _GoatJam24.Scripts.InputControl
         private void Update() 
         {
             if (Input.GetMouseButtonDown(0) 
-                && Physics.Raycast(_mainCam.ScreenPointToRay(Input.mousePosition), out var hit, 100)
+                && Physics.Raycast(_mainCam.ScreenPointToRay(Input.mousePosition), out var hit, 1000)
                 && hit.transform.TryGetComponent<NPCController>(out var npcController))
             {
                 _playerWorldController.Teleport(npcController.playerTransform.position);

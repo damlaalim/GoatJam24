@@ -1004,6 +1004,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 8187772413335842392}
+    - target: {fileID: 2317330647522699560, guid: 21dc29b833e3e2b4b90c4f50be317023, type: 3}
+      propertyPath: conversationActor
+      value: 
+      objectReference: {fileID: 6668494613948378599}
     - target: {fileID: 5112634139738969613, guid: 21dc29b833e3e2b4b90c4f50be317023, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.013
@@ -1074,18 +1078,6 @@ PrefabInstance:
       propertyPath: initTransform
       value: 
       objectReference: {fileID: 2306231658289164734}
-    - target: {fileID: 8233264721470040592, guid: 1573ae8eca6dec94fb31b7d0139f979a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8233264721470040592, guid: 1573ae8eca6dec94fb31b7d0139f979a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8233264721470040592, guid: 1573ae8eca6dec94fb31b7d0139f979a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.06
-      objectReference: {fileID: 0}
     - target: {fileID: 8233264721470040592, guid: 1573ae8eca6dec94fb31b7d0139f979a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

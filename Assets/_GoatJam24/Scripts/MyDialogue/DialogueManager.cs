@@ -9,9 +9,9 @@ namespace _GoatJam24.Scripts.MyDialogue
     {
         [Inject] private InGameCanvas _inGame;
 
-        private bool _dialogueIsContinue = false, _dialogIsOver = false;
-        private List<DialogueResponse> lastNode;
-        private int dialogCount;
+        // private bool _dialogueIsContinue = false, _dialogIsOver = false;
+        // private List<DialogueResponse> lastNode;
+        // private int dialogCount;
 
         public void StartNewDialogue(DialogueData data)
         {
