@@ -13,16 +13,16 @@ namespace _GoatJam24.Scripts.MyDialogue
     [Serializable]
     public class DialogueResponse
     {
-        public string character;
-        public string responseText;
-        public DialogueNode responses; 
+        // public string character;
+        // public string responseText;
+        // public DialogueNode responses; 
     }
 
     [Serializable]
     public class DialogueNode
     {   
-        public string character;
-        public string dialogue;
-        public List<DialogueResponse> nextNode;
+        // public string character;
+        // public string dialogue;
+        // public List<DialogueResponse> nextNode;
     }
 }

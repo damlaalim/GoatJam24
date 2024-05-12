@@ -47,7 +47,7 @@ namespace _GoatJam24.Scripts.Player
             if (Input.GetMouseButtonDown(0))
                 _mouseTime = Time.time;
             
-            if (canTeleport && Physics.Raycast(_mainCam.ScreenPointToRay(Input.mousePosition), out var hit, 100) 
+            if (canTeleport && Physics.Raycast(_mainCam.ScreenPointToRay(Input.mousePosition), out var hit, 1000) 
                             && hit.transform.CompareTag("Planet") && Input.GetMouseButtonUp(0))
             {
                 var heldTime = Time.time - _mouseTime;
