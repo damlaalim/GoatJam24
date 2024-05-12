@@ -66,6 +66,8 @@ namespace _GoatJam24.Scripts.Enemy
             
                 _enemyManager.createdEnemyList.Add(this);
                 _enemyManager._orderEnemyList.Remove(this);
+                _enemyManager.createdEnemyCount++;
+                _enemyManager.createdEnemy = true;
             
                 FollowToPlayer();
             }
@@ -98,6 +100,7 @@ namespace _GoatJam24.Scripts.Enemy
             _enemyManager.createdEnemyList.Remove(this);
             Death();
             transform.DOScale(Vector3.zero, .2f).SetEase(Ease.OutBounce);
+            _enemyManager.EnemyDead?.Invoke();
         }
 
         public void Death()

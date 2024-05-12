@@ -11,8 +11,11 @@ namespace _GoatJam24.Scripts.Enemy
 {
     public class EnemyManager : MonoBehaviour
     {
+        public Action EnemyDead;
         public List<EnemyController> createdEnemyList;
         public List<EnemyController> _orderEnemyList;
+        public int createdEnemyCount;
+        public bool createdEnemy = false;
 
         [SerializeField] private List<EnemyController> _enemyPrefabList;
         [SerializeField] private Vector2 xBorder, yBorder;
@@ -25,7 +28,18 @@ namespace _GoatJam24.Scripts.Enemy
         [Inject] private GameManager _gameManager;
 
         private Coroutine _enemyControlRoutine;
-        private int _createdEnemyCount;
+
+        private void Start()
+        {
+            EnemyDead += OnEnemyDead;
+        }
+
+        private void OnEnemyDead()
+        {
+            if (createdEnemyList.Count > 0)
+                return;
+            _gameManager.MiniGameOver(true);
+        }
 
         public Transform GetNearestEnemy(Transform player)
         {
@@ -47,21 +61,19 @@ namespace _GoatJam24.Scripts.Enemy
 
         public void StartEnemyCreate()
         {
-            _createdEnemyCount = 0;
+            createdEnemyCount = 0;
             _enemyControlRoutine = StartCoroutine(EnemyCreateControl_Routine());
         }
 
         private IEnumerator EnemyCreateControl_Routine()
         {
-            while (_createdEnemyCount < levelEnemyCount)
+            while (createdEnemyCount < levelEnemyCount)
             {
                 if (createdEnemyList.Count < maxEnemyCount)
                     SpawnNewEnemy();
              
                 yield return new WaitForSeconds(enemyCreatDelay);
             }
-            
-            _gameManager.MiniGameOver(true);
         }
 
         public void SpawnNewEnemy()
@@ -73,7 +85,6 @@ namespace _GoatJam24.Scripts.Enemy
             enemyController.transform.localPosition = randomPos;
             enemyController.Instantiate(this, _playerMovement.transform);
             _orderEnemyList.Add(enemyController);
-            _createdEnemyCount++;
         }
 
         public void Reset()
@@ -94,7 +105,7 @@ namespace _GoatJam24.Scripts.Enemy
 
             createdEnemyList.Clear();
             _orderEnemyList.Clear();
-            _createdEnemyCount = 0;
+            createdEnemyCount = 0;
         }
     }
 }

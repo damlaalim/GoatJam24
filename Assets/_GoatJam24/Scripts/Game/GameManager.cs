@@ -7,6 +7,7 @@ using _GoatJam24.Scripts.Player;
 using _GoatJam24.Scripts.Enemy;
 using _GoatJam24.Scripts.MyExtensions;
 using _GoatJam24.Scripts.NPCManagement;
+using _GoatJam24.Scripts.TaskSystem;
 using Cinemachine;
 using PixelCrushers.DialogueSystem;
 using TMPro;
@@ -31,6 +32,7 @@ namespace _GoatJam24.Scripts.Game
         [Inject] private PlayerShootController _playerShootController;
         [Inject] private PlayerWorldController _playerWorldController;
         [Inject] private NPCManager _npcManager;
+        [Inject] private TaskManager _taskManager;
 
         private bool _planetCanMovement;
 
@@ -68,7 +70,7 @@ namespace _GoatJam24.Scripts.Game
         
         public void OnClick_CloseMiniGame()
         {
-            _startCanvas.enabled = true;
+            // _startCanvas.enabled = true;
             _miniGameTransform.gameObject.SetActive(false);
         }
         
@@ -94,6 +96,7 @@ namespace _GoatJam24.Scripts.Game
                 _playerWorldController.StartGame();
                 yield return new WaitForSeconds(1f);
                 _planetCanMovement = true;
+                _taskManager.StartGame();
             }
         }
 
@@ -118,6 +121,11 @@ namespace _GoatJam24.Scripts.Game
         {
             _playerWorldController.canTeleport = true;
             _planetCanMovement = true;
+        }
+
+        public void Event_NasaTaskComplete()
+        {
+            _taskManager.NextTask(2);
         }
     }
 }

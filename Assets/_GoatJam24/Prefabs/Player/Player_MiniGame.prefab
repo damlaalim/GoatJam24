@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 8705449471104094397, guid: 07f50cc590dab8740bc1243b1a1bbe02, type: 3}
-  _shootDelay: 1.4
+  _shootDelay: 0.2
 --- !u!114 &2458017349453445060
 MonoBehaviour:
   m_ObjectHideFlags: 0

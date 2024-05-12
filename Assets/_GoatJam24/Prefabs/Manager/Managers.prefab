@@ -4474,7 +4474,7 @@ PrefabInstance:
       objectReference: {fileID: 6284463671198805467}
     - target: {fileID: 2750944229639332532, guid: 5433c1959c19d784abf0e754fa1d8c0d, type: 3}
       propertyPath: maxEnemyCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2750944229639332532, guid: 5433c1959c19d784abf0e754fa1d8c0d, type: 3}
       propertyPath: enemyCreatDelay
@@ -4482,7 +4482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750944229639332532, guid: 5433c1959c19d784abf0e754fa1d8c0d, type: 3}
       propertyPath: levelEnemyCount
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2750944229639332532, guid: 5433c1959c19d784abf0e754fa1d8c0d, type: 3}
       propertyPath: _enemyPrefabList.Array.size
