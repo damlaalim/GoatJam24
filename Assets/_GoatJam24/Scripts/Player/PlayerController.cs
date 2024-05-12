@@ -12,8 +12,8 @@ namespace _GoatJam24.Scripts.Player
         public bool canTakeDamage;
         
         [SerializeField] private float _health;
-        [SerializeField] private Slider _healthBar;
         [SerializeField] private Transform _modelTransform;
+        [SerializeField] private Animator heart1, heart2, heart3;
         
         private float _currentHealth;
         private SpriteRenderer _spriteRenderer;
@@ -25,7 +25,7 @@ namespace _GoatJam24.Scripts.Player
         private void Start()
         {
             canTakeDamage = true;
-            _currentHealth = _health;
+            _currentHealth = 3;
             _spriteRenderer = _modelTransform.GetComponent<SpriteRenderer>();
             _rb = GetComponent<Rigidbody2D>();
         }
@@ -33,14 +33,27 @@ namespace _GoatJam24.Scripts.Player
         public void StartGame()
         {
             _modelTransform.gameObject.SetActive(true);
-            _healthBar.gameObject.SetActive(true);
         }
 
         public void TakeDamage(float damage, Vector3 enemyPosition)
         {
             canTakeDamage = false;
-            _currentHealth -= damage;
-            _healthBar.value = _currentHealth / _health;
+            _currentHealth--;
+
+            if (_currentHealth == 2)
+            {
+                heart3.SetTrigger("heart");
+            }
+            
+            if (_currentHealth == 1)
+            {
+                heart2.SetTrigger("heart");
+            }
+            if (_currentHealth == 0)
+            {
+                heart1.SetTrigger("heart");
+            }
+            // _healthBar.value = _currentHealth / _health;
 
             var currentColor = _spriteRenderer.color;
             var targetColor = currentColor;
@@ -55,9 +68,8 @@ namespace _GoatJam24.Scripts.Player
                 _spriteRenderer.DOColor(currentColor, .2f);
             });
 
-            if (_currentHealth <= 0)
+            if (_currentHealth < 0)
                 _gameManager.MiniGameOver(false);
-
         }
 
         public void Destroy()
@@ -67,13 +79,11 @@ namespace _GoatJam24.Scripts.Player
                 _modelTransform.gameObject.SetActive(false);
                 _modelTransform.localScale = Vector3.one;
             });
-            _healthBar.gameObject.SetActive(false);
         }
 
         public void ResetHealth()
         {
-            _currentHealth = _health;
-            _healthBar.value = 1;
+            _currentHealth = 3;
         }
     }
 }

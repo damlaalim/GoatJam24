@@ -17,6 +17,7 @@ namespace _GoatJam24.Scripts.Game
     public class GameManager : MonoBehaviour
     {
         public bool PlanetCanMovement => !_startCanvas.enabled && !_miniGameTransform.gameObject.activeSelf && _planetCanMovement;
+        public GameObject nasa;
         
         [SerializeField] private Transform _miniGameTransform;
         [SerializeField] private TextMeshProUGUI _winText, _loseText;
