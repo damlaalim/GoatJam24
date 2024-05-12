@@ -14,7 +14,7 @@ namespace _GoatJam24.Scripts.Game
 {
     public class GameManager : MonoBehaviour
     {
-        public bool PlanetCanMovement => !_startCanvas.enabled && !_miniGameTransform.gameObject.activeSelf;
+        public bool PlanetCanMovement => !_startCanvas.enabled && !_miniGameTransform.gameObject.activeSelf && _planetCanMovement;
         
         [SerializeField] private Transform _miniGameTransform;
         [SerializeField] private TextMeshProUGUI _winText, _loseText;
@@ -22,6 +22,7 @@ namespace _GoatJam24.Scripts.Game
         [SerializeField] private CinemachineVirtualCamera _cinemachine;
         [SerializeField] private GameObject _planet, _rocket;
         [SerializeField] private Canvas _startCanvas;
+        [SerializeField] private Animator _camAnim;
         
         [Inject] private PlayerController _playerController;
         [Inject] private PlayerMovement _playerMovement;
@@ -29,6 +30,8 @@ namespace _GoatJam24.Scripts.Game
         [Inject] private PlayerShootController _playerShootController;
         [Inject] private PlayerWorldController _playerWorldController;
         [Inject] private NPCManager _npcManager;
+
+        private bool _planetCanMovement;
 
         private void Start()
         {
@@ -70,6 +73,7 @@ namespace _GoatJam24.Scripts.Game
         
         public void OnClick_StartGame()
         {
+            _planetCanMovement = false;
             _startCanvas.enabled = false;
             _playerWorldController.canTeleport = true;
             // _npcManager.StartGame();
@@ -83,9 +87,12 @@ namespace _GoatJam24.Scripts.Game
                 yield return new WaitForSeconds(5.3f);
                 _cinemachine.LookAt = _planet.transform;
 
-                yield return new WaitForSeconds(.3f);
+                yield return new WaitForSeconds(.4f);
                 
+                _camAnim.SetTrigger("zoom");
                 _playerWorldController.StartGame();
+                yield return new WaitForSeconds(1f);
+                _planetCanMovement = true;
             }
         }
     }
